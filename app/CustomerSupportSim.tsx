@@ -9,14 +9,16 @@ export default function CustomerSupportSim({ children }: { children: any }) {
   const [typingText, setTypingText] = useState("");
 
   // 初始数据池副本
-  const [queue, setQueue] = useState<any[]>(
-    rawData.map((c) => ({
-      ...c,
-      status: c.difficulty === "转人工" ? "manual" : "waiting",
-      messages: [],
-      createdAt: Date.now(),
-    }))
-  );
+  const shuffled = [...rawData].sort(() => Math.random() - 0.5);
+const [queue, setQueue] = useState<any[]>(
+  shuffled.map((c) => ({
+    ...c,
+    status: c.difficulty === "转人工" ? "manual" : "waiting",
+    messages: [],
+    createdAt: Date.now(),
+  }))
+);
+
 
   // 每 1~10 秒注入 1~3 个顾客
   useEffect(() => {
@@ -36,6 +38,26 @@ export default function CustomerSupportSim({ children }: { children: any }) {
     return () => clearInterval(interval);
   }, [queue, currentId]);
 
+  
+  const handleManualTransfer = (id: string, msg: string) => {
+    setCustomers((prev) =>
+      prev.map((c) =>
+        c.id === id
+          ? {
+              ...c,
+              status: "manual",
+              repliedAt: Date.now(),
+              messages: [...c.messages, { from: "agent", text: msg }],
+            }
+          : c
+      )
+    );
+
+    const next = customers.find((c) => c.status === "waiting" && c.id !== id);
+    if (next) setCurrentId(next.id);
+  };
+
+
   // AI 自动回复：打字 + 延迟 + 回复
   useEffect(() => {
     if (mode !== "auto") return;
@@ -47,7 +69,15 @@ export default function CustomerSupportSim({ children }: { children: any }) {
     const last = messages.at(-1);
     const alreadyReplied = messages.some((m: { from: string }) => m.from === "agent");
   
-    // 避免重复触发
+    
+    // 特殊处理：转人工
+    if (current.difficulty === "转人工") {
+      const fallbackMsg = "您好，当前问题小助手暂无法解决，这边帮您转人工处理，请稍候~";
+      handleManualTransfer(current.id, fallbackMsg);
+      return;
+    }
+
+  // 避免重复触发
     if (!last || last.from !== "user" || alreadyReplied) return;
   
     const fullText = current.ai_reply;
@@ -59,9 +89,10 @@ export default function CustomerSupportSim({ children }: { children: any }) {
       setTypingText(fullText.slice(0, index));
       if (index >= fullText.length) {
         clearInterval(interval);
+        setTypingText("");
+
         setTimeout(() => {
           handleReply(current.id, fullText);
-          setTypingText("");
         }, 1000);
       }
     }, 40);
@@ -71,34 +102,57 @@ export default function CustomerSupportSim({ children }: { children: any }) {
   
 
 // 如果当前客户已处理或是转人工，自动跳到下一个待处理客户
-useEffect(() => {
-  if (mode !== "auto") return;
-  const current = customers.find((c) => c.id === currentId);
-  if (!current) return;
-  if (current.status === "done" || current.status === "manual") {
-    const next = customers.find((c) => c.status === "waiting");
-    if (next) setCurrentId(next.id);
-  }
-}, [customers, currentId, mode]);
+// useEffect(() => {
+//   if (mode !== "auto") return;
+//   const current = customers.find((c) => c.id === currentId);
+//   if (!current) return;
+//   if (current.status === "done" || current.status === "manual") {
+//     const next = customers.find((c) => c.status === "waiting");
+//     if (next) setCurrentId(next.id);
+//   }
+// }, [customers, currentId, mode]);
+
+// useEffect(() => {
+//   if (mode !== "auto") return;
+
+//   const current = customers.find((c) => c.id === currentId);
+//   if (!current || !current.repliedAt) return;
+
+//   const timeout = setTimeout(() => {
+//     const next = customers.find((c) => c.status === "waiting" && c.id !== currentId);
+//     if (next) setCurrentId(next.id);
+//   }, 2000); // 2 秒后跳转
+// console.log('当前状态', current?.name, current?.status, current?.repliedAt)
+//   return () => clearTimeout(timeout);
+// }, [customers, currentId, mode]);
 
 
-  const handleReply = (id: string, msg: string) => {
-    setCustomers((prev) =>
-      prev.map((c) =>
-        c.id === id
-          ? {
-              ...c,
-              status: "done",
-              repliedAt: Date.now(),
-              messages: [...c.messages, { from: "agent", text: msg }],
-            }
-          : c
-      )
-    );
 
-    const next = customers.find((c) => c.status === "waiting" && c.id !== id);
-    if (next) setCurrentId(next.id);
-  };
+const handleReply = (id: string, msg: string) => {
+  const updatedCustomers = customers.map((c) =>
+    c.id === id
+      ? {
+          ...c,
+          status: "done",
+          repliedAt: Date.now(),
+          messages: [...c.messages, { from: "agent", text: msg }],
+        }
+      : c
+  );
+console.log(`[系统] 发送消息：${msg}`);
+  setCustomers(updatedCustomers);
+
+requestAnimationFrame(() => {
+    setTimeout(() => {
+      const next = updatedCustomers.find((c) => c.status === "waiting" && c.id !== id);
+      if (next) {
+        console.log(`[系统] 等待2秒后跳转到：${next.name}`);
+        setCurrentId(next.id);
+      }
+    }, 2000);
+  });
+};
+
 
   const currentCustomer = customers.find((c) => c.id === currentId) || null;
 

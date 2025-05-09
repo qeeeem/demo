@@ -145,13 +145,15 @@ export default function CustomerServiceInterface() {
   // Initialize queue when raw data is loaded
   useEffect(() => {
     if (rawData.length > 0) {
-      const initializedQueue = rawData.map((c) => ({
-        ...c,
-        status: c.difficulty === "转人工" ? "manual" : "waiting",
-        messages: c.messages || [{ from: "user", text: c.question }],
-        createdAt: Date.now(),
-      }))
-      setQueue(initializedQueue)
+const shuffled = [...rawData].sort(() => Math.random() - 0.5);
+const initializedQueue = shuffled.map((c) => ({
+  ...c,
+  status: c.difficulty === "转人工" ? "manual" : "waiting",
+  messages: c.messages || [{ from: "user", text: c.question }],
+  createdAt: Date.now(),
+}));
+setQueue(initializedQueue);
+
     }
   }, [rawData])
 
