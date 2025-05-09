@@ -11,9 +11,18 @@ export interface Customer {
   difficulty: "简单" | "困难" | "转人工";
   question: string;
   ai_reply: string;
-  ai_suggestions: string[]; // ✅ 加这一行
+  ai_suggestions: string[];
   status: "waiting" | "done" | "manual";
   createdAt?: number;
   repliedAt?: number;
   messages: Message[];
+  insight?: Insight; 
+}
+
+export interface Insight {
+  phone: string;
+  status: string;
+  realName: string;
+  plan: string;
+  history: string[];
 }
