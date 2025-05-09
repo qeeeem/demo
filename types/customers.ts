@@ -11,8 +11,9 @@ export interface Customer {
   difficulty: "简单" | "困难" | "转人工";
   question: string;
   ai_reply: string;
+  ai_suggestions: string[]; // ✅ 加这一行
   status: "waiting" | "done" | "manual";
-  messages: Message[];
-  createdAt: number; // ✅ 添加这行
+  createdAt?: number;
   repliedAt?: number;
+  messages: Message[];
 }

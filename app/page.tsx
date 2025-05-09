@@ -6,7 +6,7 @@ import type { Customer } from "../types/customers";
 
 export default function CustomerServiceInterface() {
   const [typingText, setTypingText] = useState("");
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const [drafts, setDrafts] = useState<Record<string, string>>({});  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
     <CustomerSupportSim>
@@ -51,7 +51,7 @@ export default function CustomerServiceInterface() {
                 setTypingText("");
               }, 1000);
             }
-          }, 60);
+          }, 30);
 
           return () => clearInterval(interval);
         }, [currentCustomer, mode]);
@@ -120,15 +120,16 @@ export default function CustomerServiceInterface() {
                       <span className="flex items-center">
                         <Clock className="h-3 w-3 mr-1" />
                         等待时间:
-                        {currentCustomer?.createdAt
-                          ? (() => {
-                            const baseTime = currentCustomer.repliedAt ?? Date.now();
-                            const secs = Math.floor((baseTime - currentCustomer.createdAt) / 1000); 
-                            const min = Math.floor(secs / 60);
-                            const sec = secs % 60;
-                            return ` ${min}分${sec}秒`;
-                            })()
-                          : " -"}
+                        {currentCustomer?.createdAt &&
+  (() => {
+    const base = currentCustomer.repliedAt ?? Date.now();
+    const diff = base - currentCustomer.createdAt!;
+    const secs = Math.floor(diff / 1000);
+    const min = Math.floor(secs / 60);
+    const sec = secs % 60;
+    return ` ${min}分${sec}秒`;
+  })()
+}
                       </span>
                       <span className="mx-2">•</span>
                       <span className="text-red-500 font-medium">{currentCustomer?.urgency}问题</span>
@@ -161,39 +162,76 @@ export default function CustomerServiceInterface() {
                   </div>
                 ))}
                 <div ref={scrollRef} />
+{/* {mode === "manual" && Array.isArray(currentCustomer?.ai_suggestions) && currentCustomer.ai_suggestions.length > 0 && (
+    <div className="px-4 py-2 border-t border-gray-100 bg-gray-50">
+      <div className="space-y-1 text-sm text-gray-700">
+        {(currentCustomer?.ai_suggestions ?? []).map((suggestion: string, idx: number) => (
+          <div
+            key={idx}
+            className="bg-gray-100 hover:bg-gray-200 border p-2 rounded cursor-pointer"
+            onClick={() => {
+              if (currentCustomer) {
+  setDrafts((prev) => ({ ...prev, [currentCustomer.id]: suggestion }));
+}
+            }}
+          >
+            {suggestion}
+          </div>
+        ))}
+      </div>
+    </div>
+)} */}
               </div>
+              <div className="p-4 border-t border-gray-200" >
+                <div className="flex flex-col gap-2 h-full">
+                  {mode === "manual" &&
+                    currentCustomer &&
+                    Array.isArray(currentCustomer.ai_suggestions) &&
+                    currentCustomer.ai_suggestions.length > 0 && (
+                      <div className="space-y-1 text-sm text-gray-700">
+                        {currentCustomer.ai_suggestions.map((suggestion: string, idx: number) => (
+                          <div
+                            key={idx}
+                            className="bg-gray-100 hover:bg-gray-200 border p-2 rounded cursor-pointer"
+                            onClick={() => {
+                              if (currentCustomer) {
+  setDrafts((prev) => ({ ...prev, [currentCustomer.id]: suggestion }));
+}
+                            }}
+                          >
+                            {suggestion}
+                          </div>
+                        ))}
+                      </div>
+                    )}
 
-              <div className="p-4 border-t border-gray-200">
-                <div className="flex flex-col gap-2">
-                  {mode === "manual" && currentCustomer?.ai_reply && (
-                    <div
-                      className="text-sm text-gray-700 bg-gray-100 border border-gray-300 rounded p-2 cursor-pointer hover:bg-gray-200"
-                      onClick={() => {
-                        if (inputRef.current) inputRef.current.value = currentCustomer.ai_reply;
-                      }}
-                      title="点击可填入输入框"
-                    >
-                      AI建议回复：{currentCustomer.ai_reply}
-                    </div>
-                  )}
-                  <div className="flex gap-2">
-                    <textarea
-                      ref={inputRef}
-                      placeholder="请输入回复..."
-                      className="flex-1 border rounded p-2"
-                      rows={2}
-                      readOnly={mode === "auto"}
-                      value={mode === "auto" ? typingText : undefined}
-                    />
+                  <div className="flex gap-2 items-center">
+                  <textarea
+  ref={inputRef}
+  placeholder="请输入回复..."
+  className="flex-1 border rounded p-2 resize-none min-h-[100px]"
+  readOnly={mode === "auto"}
+  value={mode === "auto" ? typingText : (currentCustomer ? drafts[currentCustomer.id] || "" : "")}
+  onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+    if (currentCustomer) {
+      setDrafts((prev) => ({ ...prev, [currentCustomer.id]: e.target.value }));
+    }
+  }}
+/>
                     <button
-                      className="bg-blue-500 text-white px-4 py-2 rounded"
+                      className="bg-blue-500 text-white px-4 py-2 rounded self-center"
                       disabled={mode === "auto"}
                       onClick={() => {
                         const val = inputRef.current?.value.trim();
                         if (val && currentCustomer) {
                           handleReply(currentCustomer.id, val);
-                          if (inputRef.current) inputRef.current.value = "";
-                        }
+                          
+  setDrafts((prev) => {
+    const updated = { ...prev };
+    delete updated[currentCustomer.id];
+    return updated;
+  });
+}
                       }}
                     >
                       发送
