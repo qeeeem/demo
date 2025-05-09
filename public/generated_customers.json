@@ -1,0 +1,578 @@
+[
+  {
+    "id": "a3dba1a9",
+    "name": "用户1",
+    "avatar": "👨‍🦱",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "这个得充多久啊？怎么知道充满了？",
+    "ai_reply": "您好，首次使用前建议先把设备充满电再使用哦~充满大约需要3个小时左右电池指示灯绿色常亮就是充满了~\n激活认证您可以按照收到的蓝色说明书步骤去激活设备哦~或者联系我给您发送视频教程~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "这个得充多久啊？怎么知道充满了？"
+      }
+    ]
+  },
+  {
+    "id": "07dff3ae",
+    "name": "用户2",
+    "avatar": "👨‍🦰",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "刚到货能直接用吗还是得先充电？",
+    "ai_reply": "1、首次使用前建议 先把设备充满电再使用（大约3个小时左右 电池指示灯绿色常亮就是充满了）\n2、激活认证（按照收到的蓝色说明书步骤去激活设备或者联系我给您发送视频教程）",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "刚到货能直接用吗还是得先充电？"
+      }
+    ]
+  },
+  {
+    "id": "7ec194e8",
+    "name": "用户3",
+    "avatar": "🧑",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "指示灯一直红是怎么回事？是不是坏了？",
+    "ai_reply": "1、首次使用前建议 先把设备充满电再使用（大约3个小时左右 电池指示灯绿色常亮就是充满了）\n2、激活认证（按照收到的蓝色说明书步骤去激活设备或者联系我给您发送视频教程）",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "指示灯一直红是怎么回事？是不是坏了？"
+      }
+    ]
+  },
+  {
+    "id": "0cfa6909",
+    "name": "用户4",
+    "avatar": "👱‍♀️",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "插上没反应啊，是不是没电？",
+    "ai_reply": "亲~首次使用前先把设备充满电再使用哦~充满大约需要6个小时左右，电池指示灯绿色常亮就是充满了！激活认证亲可以按照收到的蓝色说明书步骤去激活设备哦~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "插上没反应啊，是不是没电？"
+      }
+    ]
+  },
+  {
+    "id": "96659b0a",
+    "name": "用户5",
+    "avatar": "👨‍🦰",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "绿灯亮就是满了对吧？",
+    "ai_reply": "您好，首次使用前建议先把设备充满电再使用哦~充满大约需要7个小时左右电池指示灯绿色常亮就是充满了~\n激活认证您可以按照收到的蓝色说明书步骤去激活设备哦~或者联系我给您发送视频教程~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "绿灯亮就是满了对吧？"
+      }
+    ]
+  },
+  {
+    "id": "c2ba801e",
+    "name": "用户6",
+    "avatar": "🧔",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "激活到底怎么搞？我看不懂说明书。",
+    "ai_reply": "后期您什么时候不想使用了，随时可以联系我给您注销就行了，您可以放心使用呢亲亲~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "激活到底怎么搞？我看不懂说明书。"
+      }
+    ]
+  },
+  {
+    "id": "1976af16",
+    "name": "用户7",
+    "avatar": "👨‍🦰",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "啥？还要实名认证？会不会泄露信息啊？",
+    "ai_reply": "后期您什么时候不想使用了，随时可以联系我给您注销就行了，您可以放心使用呢亲亲~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "啥？还要实名认证？会不会泄露信息啊？"
+      }
+    ]
+  },
+  {
+    "id": "d22bd9a2",
+    "name": "用户8",
+    "avatar": "👩",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "我不想实名可以用不？",
+    "ai_reply": "亲 你可以放心实名呢 这个都是直接实名到运营商官方的 不用担心身份信息泄露呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我不想实名可以用不？"
+      }
+    ]
+  },
+  {
+    "id": "9a453567",
+    "name": "用户9",
+    "avatar": "👱‍♀️",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "实名是不是要跑营业厅？",
+    "ai_reply": "亲 你可以放心实名呢 这个都是直接实名到运营商官方的 不用担心身份信息泄露呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "实名是不是要跑营业厅？"
+      }
+    ]
+  },
+  {
+    "id": "4113f737",
+    "name": "用户10",
+    "avatar": "👱‍♀️",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "视频教程在哪看？你发我一下。",
+    "ai_reply": "后期您什么时候不想使用了，随时可以联系我给您注销就行了，您可以放心使用呢亲亲~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "视频教程在哪看？你发我一下。"
+      }
+    ]
+  },
+  {
+    "id": "87190ee9",
+    "name": "用户11",
+    "avatar": "👨‍🦰",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "为什么我扫二维码没反应？",
+    "ai_reply": "亲 你可以放心实名呢 这个都是直接实名到运营商官方的 不用担心身份信息泄露呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "为什么我扫二维码没反应？"
+      }
+    ]
+  },
+  {
+    "id": "58d40251",
+    "name": "用户12",
+    "avatar": "👵",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "我刚实名了还不能用是咋回事？",
+    "ai_reply": "后期您什么时候不想使用了，随时可以联系我给您注销就行了，您可以放心使用呢亲亲~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我刚实名了还不能用是咋回事？"
+      }
+    ]
+  },
+  {
+    "id": "c0703162",
+    "name": "用户13",
+    "avatar": "👨‍🦰",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "这个实名是不是绑定我身份证的？能解绑不？",
+    "ai_reply": "后期您什么时候不想使用了，随时可以联系我给您注销就行了，您可以放心使用呢亲亲~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "这个实名是不是绑定我身份证的？能解绑不？"
+      }
+    ]
+  },
+  {
+    "id": "c46a92a0",
+    "name": "用户14",
+    "avatar": "👵",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "你说实名不影响征信，那为啥要我身份证？",
+    "ai_reply": "亲 你可以放心实名呢 这个都是直接实名到运营商官方的 不用担心身份信息泄露呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "你说实名不影响征信，那为啥要我身份证？"
+      }
+    ]
+  },
+  {
+    "id": "4907375f",
+    "name": "用户15",
+    "avatar": "👵",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "套餐怎么买？我看不懂。",
+    "ai_reply": "您好！很高兴为您服务！您的问题我已了解。您这边扫描设备背面第一个二维码进入，点击【订购套餐】，然后选择心仪的套餐直接订购就好哦~有任何问题欢迎继续询问！",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "套餐怎么买？我看不懂。"
+      }
+    ]
+  },
+  {
+    "id": "b7a548fc",
+    "name": "用户16",
+    "avatar": "🧑",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "1500G真的假的？这么多？",
+    "ai_reply": "亲亲，您扫描设备背面第一个二维码进入，点击【订购套餐】，然后选择您心仪的套餐直接订购就可以购买了",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "1500G真的假的？这么多？"
+      }
+    ]
+  },
+  {
+    "id": "b3b19fed",
+    "name": "用户17",
+    "avatar": "🧑",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "有便宜点的套餐吗？就想偶尔用用。",
+    "ai_reply": "您好！很高兴为您服务！您的问题我已了解。您这边扫描设备背面第一个二维码进入，点击【订购套餐】，然后选择心仪的套餐直接订购就好哦~有任何问题欢迎继续询问！",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "有便宜点的套餐吗？就想偶尔用用。"
+      }
+    ]
+  },
+  {
+    "id": "05c64385",
+    "name": "用户18",
+    "avatar": "🧔",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "我点了订购没反应，是不是没成功？",
+    "ai_reply": "您好！很高兴为您服务！您的问题我已了解。您这边扫描设备背面第一个二维码进入，点击【订购套餐】，然后选择心仪的套餐直接订购就好哦~有任何问题欢迎继续询问！",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我点了订购没反应，是不是没成功？"
+      }
+    ]
+  },
+  {
+    "id": "2978b11e",
+    "name": "用户19",
+    "avatar": "👨‍🦰",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "我不想用了，怎么退？",
+    "ai_reply": "亲亲，您扫描设备背面第一个二维码进入，点击【订购套餐】，然后选择您心仪的套餐直接订购就可以购买了",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我不想用了，怎么退？"
+      }
+    ]
+  },
+  {
+    "id": "99cef7ea",
+    "name": "用户20",
+    "avatar": "🧔",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "一直连不上WiFi是怎么回事？",
+    "ai_reply": "请发我您的设备充值号码，然后稍等我这边去查询",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "一直连不上WiFi是怎么回事？"
+      }
+    ]
+  },
+  {
+    "id": "ef3b371a",
+    "name": "用户21",
+    "avatar": "👩",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "为啥我明明有套餐但连不上？",
+    "ai_reply": "请发我您的设备充值号码，然后稍等我这边去查询",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "为啥我明明有套餐但连不上？"
+      }
+    ]
+  },
+  {
+    "id": "d99af662",
+    "name": "用户22",
+    "avatar": "👨‍🦰",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "显示在线但上不了网啊！",
+    "ai_reply": "亲亲别着急哦~请发我您的设备充值号码，我这边立刻帮您查询的呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "显示在线但上不了网啊！"
+      }
+    ]
+  },
+  {
+    "id": "65484dc3",
+    "name": "用户23",
+    "avatar": "👨‍🦱",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "老是断网，一天好几次。",
+    "ai_reply": "亲亲别着急哦~请发我您的设备充值号码，我这边立刻帮您查询的呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "老是断网，一天好几次。"
+      }
+    ]
+  },
+  {
+    "id": "55e7227d",
+    "name": "用户24",
+    "avatar": "👱‍♀️",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "你们这个能切换网络吗？联通太慢了。",
+    "ai_reply": "亲亲久等了~请发我您的设备充值号码，我这边立刻帮您查询的呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "你们这个能切换网络吗？联通太慢了。"
+      }
+    ]
+  },
+  {
+    "id": "52d3cbec",
+    "name": "用户25",
+    "avatar": "🧑",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "要我开192.168.1.1是啥意思？我打不开啊。",
+    "ai_reply": "请发我您的设备充值号码，然后稍等我这边去查询",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "要我开192.168.1.1是啥意思？我打不开啊。"
+      }
+    ]
+  },
+  {
+    "id": "4afc1e83",
+    "name": "用户26",
+    "avatar": "🧑",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "SIM卡管理在哪？我找不到。",
+    "ai_reply": "请发我您的设备充值号码，然后稍等我这边去查询",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "SIM卡管理在哪？我找不到。"
+      }
+    ]
+  },
+  {
+    "id": "c2fc16b8",
+    "name": "用户27",
+    "avatar": "🧔",
+    "urgency": "正常",
+    "difficulty": "简单",
+    "question": "卡是插好了但显示离线是怎么回事？",
+    "ai_reply": "亲亲久等了~请发我您的设备充值号码，我这边立刻帮您查询的呢",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "卡是插好了但显示离线是怎么回事？"
+      }
+    ]
+  },
+  {
+    "id": "dd564a85",
+    "name": "用户28",
+    "avatar": "👵",
+    "urgency": "新",
+    "difficulty": "困难",
+    "question": "怎么切换运营商？我想用电信的。",
+    "ai_reply": "亲~您按以下方式操作试试看呢，有任何问题都可以再找我哦：\n1、断开手机流量，连接设备WiFi，打开浏览器搜索：192.168.1.1 \n2、输入账号/密码都是：admin，登录后台 \n3、点击：菜单---路由器---SIM卡管理 \n选择想要切换的运营商切换即可，需要重新登录实名该运营商\n切换操作3分钟后设备关机，6分钟后再开机连接",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "怎么切换运营商？我想用电信的。"
+      }
+    ]
+  },
+  {
+    "id": "8cec4944",
+    "name": "用户29",
+    "avatar": "👱‍♀️",
+    "urgency": "正常",
+    "difficulty": "困难",
+    "question": "切换后为啥还是上不了网？",
+    "ai_reply": "收到您的问题了亲~您按以下方式操作看看呢：\n1、断开手机流量，连接设备WiFi，打开浏览器搜索：192.168.1.1 \n2、输入账号/密码都是：admin，登录后台 \n3、点击：菜单---路由器---SIM卡管理 \n选择想要切换的运营商切换即可，需要重新登录实名该运营商\n切换操作3分钟后设备关机，6分钟后再开机连接",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "切换后为啥还是上不了网？"
+      }
+    ]
+  },
+  {
+    "id": "625fed83",
+    "name": "用户30",
+    "avatar": "🧑",
+    "urgency": "新",
+    "difficulty": "困难",
+    "question": "你说的后台在哪？我不会搞。",
+    "ai_reply": "收到您的问题了亲~您按以下方式操作看看呢：\n1、断开手机流量，连接设备WiFi，打开浏览器搜索：192.168.1.1 \n2、输入账号/密码都是：admin，登录后台 \n3、点击：菜单---路由器---SIM卡管理 \n选择想要切换的运营商切换即可，需要重新登录实名该运营商\n切换操作3分钟后设备关机，7分钟后再开机连接",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "你说的后台在哪？我不会搞。"
+      }
+    ]
+  },
+  {
+    "id": "2c658404",
+    "name": "用户31",
+    "avatar": "👱‍♀️",
+    "urgency": "正常",
+    "difficulty": "困难",
+    "question": "切了之后关机开机多久才好？",
+    "ai_reply": "亲~您按以下方式操作试试看呢，有任何问题都可以再找我哦：\n1、断开手机流量，连接设备WiFi，打开浏览器搜索：192.168.1.1 \n2、输入账号/密码都是：admin，登录后台 \n3、点击：菜单---路由器---SIM卡管理 \n选择想要切换的运营商切换即可，需要重新登录实名该运营商\n切换操作3分钟后设备关机，9分钟后再开机连接",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "切了之后关机开机多久才好？"
+      }
+    ]
+  },
+  {
+    "id": "bf0f00b5",
+    "name": "用户32",
+    "avatar": "👱‍♀️",
+    "urgency": "紧急",
+    "difficulty": "困难",
+    "question": "我恢复了还是用不了！",
+    "ai_reply": "1、断开手机流量，连接设备WiFi，打开浏览器搜索：192.168.1.1 \n2、输入账号/密码都是：admin，登录后台 \n3、点击：菜单---路由器---SIM卡管理 \n选择想要切换的运营商切换即可，需要重新登录实名该运营商\n切换操作3分钟后设备关机，5分钟后再开机连接",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我恢复了还是用不了！"
+      }
+    ]
+  },
+  {
+    "id": "a5030810",
+    "name": "用户33",
+    "avatar": "👨‍🦰",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "好评送套餐怎么操作？",
+    "ai_reply": "收到货之后可以参加好评活动，赠送2天1500G套餐",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "好评送套餐怎么操作？"
+      }
+    ]
+  },
+  {
+    "id": "471a6237",
+    "name": "用户34",
+    "avatar": "👱‍♀️",
+    "urgency": "新",
+    "difficulty": "简单",
+    "question": "我评了了，你看下有没有收到？",
+    "ai_reply": "亲亲，这边我们有好评活动的，您收到货之后可以参加好评活动，赠送2天1500G套餐哦~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "我评了了，你看下有没有收到？"
+      }
+    ]
+  },
+  {
+    "id": "b4a4c526",
+    "name": "用户35",
+    "avatar": "🧔",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "是不是必须五星才送？写评语要长吗？",
+    "ai_reply": "亲亲，这边我们有好评活动的，您收到货之后可以参加好评活动，赠送2天1500G套餐哦~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "是不是必须五星才送？写评语要长吗？"
+      }
+    ]
+  },
+  {
+    "id": "12821178",
+    "name": "用户36",
+    "avatar": "🧑",
+    "urgency": "紧急",
+    "difficulty": "简单",
+    "question": "两天1500G靠谱吗？感觉太夸张了。",
+    "ai_reply": "亲亲，您收到货之后动动手给个好评，再多赠您2天1500G套餐哦~",
+    "status": "waiting",
+    "messages": [
+      {
+        "from": "user",
+        "text": "两天1500G靠谱吗？感觉太夸张了。"
+      }
+    ]
+  }
+]
