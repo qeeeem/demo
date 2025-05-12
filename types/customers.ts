@@ -16,7 +16,9 @@ export interface Customer {
   createdAt?: number;
   repliedAt?: number;
   messages: Message[];
-  insight?: Insight; 
+  insight?: Insight;
+  isNewCustomer?: boolean
+  source?: string
 }
 
 export interface Insight {
