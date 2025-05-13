@@ -11,6 +11,13 @@ export default function CustomerServiceInterface() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
 
+  // 在组件内添加颜色映射
+  const sourceColorMap: Record<string, { bg: string; color: string; border: string }> = {
+    'H5': { bg: '#55aa7f', color: '#fff', border: '#3c795a' }, // 绿色
+    '微信': { bg: '#3b82f6', color: '#fff', border: '#1d4ed8' }, // 蓝色
+    '官网': { bg: '#aaaaff', color: '#fff', border: '#7373ac' }, // 紫色
+  };
+
   return (
     <CustomerSupportSim mode={mode}>
       {({ customers, currentCustomer, handleReply, typingText, setTypingText, currentId, setCurrentId }) => {
@@ -23,7 +30,34 @@ export default function CustomerServiceInterface() {
             }`}
             onClick={() => setCurrentId(c.id)}
           >
-            <div className="truncate">{c.name}</div>
+            <div className="truncate flex items-center">
+              {c.name}
+              <span
+                className="ml-2 px-2 py-0.5 text-xs rounded-full font-normal"
+                style={{
+                  backgroundColor: c.isNewCustomer ? '#e0f2fe' : '#e5e7eb',
+                  color: c.isNewCustomer ? '#0284c7' : '#6b7280',
+                }}
+              >
+                {c.isNewCustomer ? '新客户' : '老客户'}
+              </span>
+              {c.source && (
+                <span
+                  className={`ml-2 text-xs px-3 py-0.5 rounded-xl font-normal
+                    ${c.source === "H5"
+                      ? "bg-green-100 text-green-600"
+                      : c.source === "微信"
+                      ? "bg-blue-100 text-blue-600"
+                      : c.source === "官网"
+                      ? "bg-purple-100 text-purple-600"
+                      : "bg-gray-100 text-gray-600"
+                    }`
+                  }
+                >
+                  {c.source}
+                </span>
+              )}
+            </div>
             <div className="text-xs text-gray-500 truncate">{c.messages.at(-1)?.text}</div>
           </div>
         )
@@ -61,19 +95,19 @@ export default function CustomerServiceInterface() {
               <div className="mt-4 space-y-4 max-h-[calc(100vh-100px)] overflow-y-auto text-sm">
                 {manualCustomers.length > 0 && (
                   <div>
-                    <h3 className="text-xs text-gray-500 mb-1">转人工</h3>
+                    <h3 className="text-xs text-gray-500 mb-1">转人工（{manualCustomers.length}）</h3>
                     {manualCustomers.map(renderCustomerItem)}
                   </div>
                 )}
                 {waitingCustomers.length > 0 && (
                   <div>
-                    <h3 className="text-xs text-gray-500 mb-1">待处理</h3>
+                    <h3 className="text-xs text-gray-500 mb-1">待处理（{waitingCustomers.length}）</h3>
                     {waitingCustomers.map(renderCustomerItem)}
                   </div>
                 )}
                 {doneCustomers.length > 0 && (
                   <div>
-                    <h3 className="text-xs text-gray-500 mb-1">已处理</h3>
+                    <h3 className="text-xs text-gray-500 mb-1">已处理（{doneCustomers.length}）</h3>
                     {doneCustomers.map(renderCustomerItem)}
                   </div>
                 )}
@@ -91,7 +125,36 @@ export default function CustomerServiceInterface() {
                     </div>
                   </div>
                   <div>
-                    <h2 className="font-semibold">{currentCustomer?.name}</h2>
+                    <h2 className="font-semibold flex items-center">
+                      {currentCustomer?.name}
+                      {currentCustomer && (
+                        <span
+                          className="ml-2 px-2 py-0.5 text-xs rounded-full font-normal"
+                          style={{
+                            backgroundColor: currentCustomer.isNewCustomer ? '#e0f2fe' : '#e5e7eb',
+                            color: currentCustomer.isNewCustomer ? '#0284c7' : '#6b7280',
+                          }}
+                        >
+                          {currentCustomer.isNewCustomer ? '新客户' : '老客户'}
+                        </span>
+                      )}
+                      {currentCustomer?.source && (
+                        <span
+                          className={`ml-2 text-xs px-2 py-0.5 rounded-xl font-normal
+                            ${currentCustomer.source === "H5"
+                              ? "bg-green-100 text-green-600"
+                              : currentCustomer.source === "微信"
+                              ? "bg-blue-100 text-blue-600"
+                              : currentCustomer.source === "官网"
+                              ? "bg-purple-100 text-purple-600"
+                              : "bg-gray-100 text-gray-600"
+                            }`
+                          }
+                        >
+                          {currentCustomer.source}
+                        </span>
+                      )}
+                    </h2>
                     <div className="flex items-center text-sm text-gray-500">
                       <span className="flex items-center">
                         <Clock className="h-3 w-3 mr-1" />
@@ -135,20 +198,52 @@ export default function CustomerServiceInterface() {
                 <div className={`flex-1 overflow-y-auto p-4 space-y-4 min-w-0 ${showInsights ? "" : "w-full"}`}>  
                   {currentCustomer?.messages.map((msg: any, idx: number) => (
                     <div key={idx} className={`flex ${msg.from === "agent" ? "justify-end" : "justify-start"}`}>
-                      <div
-                        className={`max-w-[60%] px-4 py-2 rounded-lg ${
-                          msg.from === "agent" ? "bg-blue-500 text-white" : "bg-white border"
-                        }`}
-                      >
-                        {msg.text}
-                      </div>
+                      {msg.from === 'user' ? (
+                        <>
+                          <div className="w-8 h-8 bg-gray-300 text-gray-700 text-sm rounded-full flex items-center justify-center mr-2">用户</div>
+                          <div
+                            className={`max-w-[60%] px-4 py-2 rounded-lg ${
+                              msg.from === "agent" ? "bg-blue-500 text-white" : "bg-white border"
+                            }`}
+                          >
+                            {msg.text}
+                          </div>
+                        </>
+                      ) : (
+                        <>
+                          <div
+                            className={`max-w-[60%] px-4 py-2 rounded-lg ${
+                              msg.from === "agent" ? "bg-blue-500 text-white" : "bg-white border"
+                            }`}
+                          >
+                            {msg.text}
+                          </div>
+                          <div className="w-8 h-8 bg-blue-500 text-white text-sm rounded-full flex items-center justify-center ml-2">小Q</div>
+                        </>
+                      )}
                     </div>
                   ))}
                   <div ref={scrollRef} />
                 </div>
                 {showInsights && (
                   <div className="w-72 border-l border-gray-200 p-4 overflow-y-auto bg-gray-50">
-                    {/* Insights UI... */}
+                    {currentCustomer?.insight && (
+  <div className="space-y-2 text-sm text-gray-700">
+    <div><strong>手机号：</strong>{currentCustomer.insight.phone}</div>
+    <div><strong>激活状态：</strong>{currentCustomer.insight.status}</div>
+    <div><strong>实名认证：</strong>{currentCustomer.insight.realName}</div>
+    <div><strong>套餐：</strong>{currentCustomer.insight.plan}</div>
+    <div>
+      <strong>历史记录：</strong>
+      <ul className="list-disc pl-5 text-xs text-gray-500">
+        {currentCustomer.insight.history.map((item: string, idx: number) => (
+          <li key={idx}>{item}</li>
+        ))}
+      </ul>
+    </div>
+  </div>
+)}
+
                   </div>
                 )}
               </div>

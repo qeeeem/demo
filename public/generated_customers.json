@@ -315,6 +315,10 @@
       {
         "from": "agent",
         "text": "1、亲亲，为了防止电信诈骗工信部规定随身wifi设备或流量卡需要实名认证才能激活使用呢，这个实名不占用营业厅名额，也不影响征信，您可以放心激活使用呢~"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备激活流程.jpg"
       }
     ],
     "insight": {
@@ -354,6 +358,10 @@
       {
         "from": "agent",
         "text": "1、亲亲，为了防止电信诈骗工信部规定随身wifi设备或流量卡需要实名认证才能激活使用呢，这个实名不占用营业厅名额，也不影响征信，您可以放心激活使用呢~"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备激活流程.jpg"
       }
     ],
     "insight": {
@@ -390,6 +398,10 @@
       {
         "from": "agent",
         "text": "1、亲亲，为了防止电信诈骗工信部规定随身wifi设备或流量卡需要实名认证才能激活使用呢，这个实名不占用营业厅名额，也不影响征信，您可以放心激活使用呢~"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备激活流程.jpg"
       }
     ],
     "insight": {
@@ -759,6 +771,10 @@
       {
         "from": "agent",
         "text": "1. 扫描设备背面第一个二维码进入\n2. 点击订购套餐\n3. 然后选择您心仪的套餐直接订购即可"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备详情.png"
       }
     ],
     "insight": {
@@ -837,6 +853,10 @@
       {
         "from": "agent",
         "text": "请发我您的设备充值号码，然后稍等我这边去查询"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备详情.png"
       }
     ],
     "insight": {
@@ -918,6 +938,10 @@
       {
         "from": "agent",
         "text": "请发我您的设备充值号码，然后稍等我这边去查询"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备详情.png"
       }
     ],
     "insight": {
@@ -1034,6 +1058,10 @@
       {
         "from": "agent",
         "text": "请发我您的设备充值号码，然后稍等我这边去查询"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/设备详情.png"
       }
     ],
     "insight": {
@@ -1399,6 +1427,22 @@
       {
         "from": "agent",
         "text": "收到货之后可以参加好评活动，赠送2天1500G套餐"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/快手.jpg"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/抖音.jpg"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/快手好评.jpg"
+      },
+      {
+        "from": "agent",
+        "image": "/reply_image/抖音好评.png"
       }
     ],
     "insight": {

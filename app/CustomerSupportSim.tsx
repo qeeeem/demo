@@ -37,7 +37,7 @@ export default function CustomerSupportSim({
 
   // —— 注入新客户 ——  
   useEffect(() => {
-if (mode !== "auto") return;
+// if (mode !== "auto") return;
     if (queue.length === 0) return;
 
     const interval = setInterval(() => {
