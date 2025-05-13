@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import SideNav from './components/SideNav'
 
 export const metadata: Metadata = {
   title: 'AI智能客服',
@@ -14,7 +15,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="flex h-screen">
+          <SideNav />
+          <main className="flex-1 overflow-auto">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   )
 }

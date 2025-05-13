@@ -58,7 +58,7 @@ export default function CustomerSupportSim({
 
   // —— AI 自动回复 ——  
   useEffect(() => {
-if (mode !== "auto") return;
+    if (mode !== "auto") return;
     if (!currentId) return;
 
     const current = customers.find((c) => c.id === currentId);
@@ -79,20 +79,39 @@ if (mode !== "auto") return;
     let idx = 0;
     setTypingText("");
 
+    console.log('[AI动画] useEffect触发', { mode, currentId, messagesLen: current.messages.length });
+
     const typer = setInterval(() => {
       idx++;
       setTypingText(replyText.slice(0, idx));
+      console.log('[AI动画] setInterval', { idx, char: replyText[idx-1], currentId });
       if (idx >= replyText.length) {
         clearInterval(typer);
         setTypingText("");
         setTimeout(() => {
           handleReply(current.id, replyText);
+          // 再发图片
+          const raw = rawData.find(c => c.id === current.id);
+          if (!raw) return;
+          const images = raw.messages.filter(m => m.from === 'agent' && m.image);
+          images.forEach(imgMsg => {
+            setTimeout(() => {
+              setCustomers(prev => prev.map(c =>
+                c.id === current.id
+                  ? { ...c, messages: [...c.messages, { from: 'agent', image: imgMsg.image }] }
+                  : c
+              ));
+            }, 500); // 每张图片间隔0.5秒
+          });
         }, 500);
       }
     }, 40);
 
-    return () => clearInterval(typer);
-  }, [mode, customers, currentId]);
+    return () => {
+      clearInterval(typer);
+      console.log('[AI动画] 清理动画', { currentId });
+    };
+  }, [mode, currentId, customers.find((c) => c.id === currentId)?.messages.length]);
 
   // —— 手动转人工的 helper ——  
   const handleManualTransfer = (id: string, msg: string) => {

@@ -1,6 +1,7 @@
 export interface Message {
   from: "user" | "agent";
-  text: string;
+  text?: string;
+  image?: string;
 }
 
 export interface Customer {
