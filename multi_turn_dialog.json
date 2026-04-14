@@ -1,0 +1,84 @@
+{
+  "id": "multi-turn-1",
+  "name": "用户5",
+  "avatar": "🧑",
+  "urgency": "新",
+  "difficulty": "简单",
+  "question": "突然上不了网",
+  "ai_reply": "亲，请发我您设备的 IMEI 号码，然后稍等我这边去查询一下哦~",
+  "ai_suggestions": [
+    "亲，请发我您设备的 IMEI 号码，然后稍等我这边去查询一下哦~",
+    "您好，请提供一下设备的 IMEI 号码，我来帮您查询具体原因~",
+    "麻烦您把设备的 IMEI 号码发给我，我这边帮您查看一下~"
+  ],
+  "status": "waiting",
+  "messages": [
+    {
+      "from": "user",
+      "text": "突然上不了网"
+    },
+    {
+      "from": "user",
+      "text": "怎么搞得"
+    },
+    {
+      "from": "agent",
+      "text": "亲，请发我您设备的 IMEI 号码，然后稍等我这边去查询一下哦~"
+    },
+    {
+      "from": "agent",
+      "type": "delay",
+      "text": "delay"
+    },
+    {
+      "from": "user",
+      "image": "/reply_image/客户发送设备号.png"
+    },
+    {
+      "from": "agent",
+      "type": "delay",
+      "text": "delay"
+    },
+    {
+      "from": "agent",
+      "text": "您好，这边查询到设备号码【863305041069542】的套餐存在以下问题：当月流量已用尽。<br><br>您可以选择：<br><br>1. <a href='https://www.jiotee.com/jc-iot-connection/client/recharging/index.html#/' style='color: #ffffff; text-decoration: underline; font-weight: bold; background-color: rgba(255,255,255,0.2); padding: 2px 6px; border-radius: 4px;'>购买流量加油包</a><br>2. 等待下月流量重置后再使用<br><br>如有需要我可以协助您办理。"
+    },
+    {
+      "from": "user",
+      "text": "哦好"
+    },
+    {
+      "from": "user",
+      "text": "谢谢"
+    },
+    {
+      "from": "agent",
+      "type": "delay",
+      "text": "delay"
+    }
+  ],
+  "insight": {
+    "phone": "139****5678",
+    "status": "已激活",
+    "realName": "已完成",
+    "plan": "5G全国通用套餐",
+    "history": [
+      "2024-03-15 - 套餐升级",
+      "2024-02-20 - 网络问题",
+      "2024-01-10 - 激活问题"
+    ]
+  },
+  "isNewCustomer": false,
+  "source": "微信",
+  "isMultiTurnDialog": true,
+  "pendingMessages": [
+    {
+      "from": "agent",
+      "text": "请问您这边还有其他问题吗？如果没有的话，本次对话即将结束啦~如果您对我的服务还满意，方便的话可以给我一个小小的好评吗 😊"
+    },
+    {
+      "from": "agent",
+      "image": "/reply_image/快手好评.jpg"
+    }
+  ]
+} 
